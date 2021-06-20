@@ -1,0 +1,36 @@
+{% extends "EmployeeLayout.html" %}
+{% block content %}
+
+    <body>
+        {% block main%}
+        <p>The list of customer </p>
+        <table>
+            <thead>
+            <tr>
+                <th>FIRST NAME</th>
+                <th>LAST NAME</th>
+                <th>STATUS</th>
+            </tr>
+            </thead>
+        <tbody>
+        {% for i in data %}
+        <tr>
+            <td>
+                {{i.firstName}}  
+            </td>
+            <td>
+                {{i.lastName}}
+            </td>
+            <td>Account Opened 
+
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+    
+    </body>
+    {% endblock %}
+
+    <!-- <a href="/singleupload">Navigate back</a> -->
+{% endblock %}

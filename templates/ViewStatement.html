@@ -1,0 +1,41 @@
+{% extends "CustomerLayout.html" %}
+{% block content %}
+    
+    <p>Statement for Card Number: {{ statement.cardNumber }}</p>
+    <table id="customers">
+        <tr>
+            <th>Transaction Date</th>
+            <th>Amount</th>
+        </tr>
+    <tbody>
+    {% for i in statement.statement%}
+    <tr>
+        <td>
+        {{i.timestamp}}  
+    </td>
+    <td>
+        {{i.amount}}
+    </td>
+</tr>
+</tbody>
+{% endfor %}
+<tr>
+    <td>Total Amount to be paid</td>
+    <td>
+        {{statement.sum}}
+    </td>
+</tr>
+<tr>
+    <td>Available Balance</td>
+    <td>
+        {{statement.actBal}}
+    </td>
+</tr>    
+  
+</tr>
+</table>
+   
+
+</body>
+{% endblock %}
+
